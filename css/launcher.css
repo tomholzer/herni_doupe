@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html >
+<html lang="cs" >
+<head >
+<meta charset="UTF-8" / >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" / >
+<title > Herní doupě</title >
+<link rel="stylesheet" href="css/launcher.css" / >
+</head >
+<body >
+<div class="app-shell" >
+<header class="topbar" >
+<h1 > Herní doupě</h1 >
+<p > Offline webová aplikace pro tablet, mobil i PC</p >
+</header >
+
+<main class="game-grid" >
+<a class="game-card" href="games/piskvorky/index.html" >
+<div class="game-card-image piskvorky-bg" > </div >
+<div class="game-card-content" >
+<h2 > Piškvorky</h2 >
+<p > Klasická hra proti hráči nebo programu</p >
+</div >
+</a >
+
+<a class="game-card" href="games/ponor/index.html" >
+<div class="game-card-image ponor-bg" > </div >
+<div class="game-card-content" >
+<h2 > Ponor do hlubin</h2 >
+<p > Ponor, poklady a návrat zpět na loď</p >
+</div >
+</a >
+</main >
+</div >
+
+<script src="js/launcher.js" > </script >
+</body >
+</html >
