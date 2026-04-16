@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piškvorky</title>
+    <link rel="stylesheet" href="pis_game.css" />
+</head>
+<body>
+    <div class="game-shell">
+        <header class="game-header">
+            <div>
+                <h1>Piškvorky</h1>
+                <p>Nastavení hry a herní plocha</p>
+            </div>
+
+            <div class="menu-wrap">
+                <button id="menuButton" class="menu-button" type="button">⋮</button>
+                <div id="menuPanel" class="menu-panel hidden">
+                    <button id="restartGameBtn" type="button">Restartovat hru</button>
+                    <button id="goHomeBtn" type="button">Hlavní nabídka</button>
+                    <button id="closeMenuBtn" type="button">Zavřít menu</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="layout">
+            <section class="panel">
+                <h2>Nastavení</h2>
+
+                <div class="field-group">
+                    <label>Režim hry</label>
+                    <div class="row-buttons">
+                        <button id="modeHumanBtn" class="toggle-button active" type="button">Hráč vs hráč</button>
+                        <button id="modeAiBtn" class="toggle-button" type="button">Hráč vs program</button>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="player1Name">Jméno hráče 1</label>
+                    <input id="player1Name" type="text" value="Hráč 1" />
+                </div>
+
+                <div class="field-group">
+                    <label for="player1Color">Barva hráče 1</label>
+                    <select id="player1Color">
+                        <option value="red">Červená</option>
+                        <option value="blue">Modrá</option>
+                        <option value="green">Zelená</option>
+                        <option value="gold">Tmavě žlutá</option>
+                    </select>
+                </div>
+
+                <div class="field-group">
+                    <label for="player2Name">Jméno hráče 2 / programu</label>
+                    <input id="player2Name" type="text" value="Program" />
+                </div>
+
+                <div class="field-group">
+                    <label for="player2Color">Barva hráče 2</label>
+                    <select id="player2Color">
+                        <option value="red">Červená</option>
+                        <option value="blue" selected>Modrá</option>
+                        <option value="green">Zelená</option>
+                        <option value="gold">Tmavě žlutá</option>
+                    </select>
+                </div>
+
+                <div class="field-group checkbox-row">
+                    <input id="threeStoneMode" type="checkbox" />
+                    <label for="threeStoneMode">Režim 3 kameny</label>
+                </div>
+
+                <div class="field-group">
+                    <label for="removeMode">Odebírání starého kamene</label>
+                    <select id="removeMode">
+                        <option value="last">Standard - poslední starší</option>
+                        <option value="random">Náhodný starší</option>
+                    </select>
+                </div>
+
+                <button id="startGameBtn" class="primary-button" type="button">Spustit / nové kolo</button>
+            </section>
+
+            <section class="panel">
+                <div class="scoreboard">
+                    <div id="player1Card" class="player-card">
+                        <div class="player-name" id="player1DisplayName">Hráč 1</div>
+                        <div class="player-score">Body: <span id="player1Score">0</span></div>
+                    </div>
+
+                    <div id="player2Card" class="player-card">
+                        <div class="player-name" id="player2DisplayName">Program</div>
+                        <div class="player-score">Body: <span id="player2Score">0</span></div>
+                    </div>
+                </div>
+
+                <div id="statusText" class="status-box">Stiskni „Spustit / nové kolo“</div>
+
+                <div id="board" class="board"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="pis_game.js?v=1"></script>
+</body>
+</html>
