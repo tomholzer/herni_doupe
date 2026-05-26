@@ -1,37 +1,53 @@
-﻿<!DOCTYPE html >
-<html lang="cs" >
-<head >
-<meta charset="UTF-8" / >
-<meta name="viewport" content="width=device-width, initial-scale=1.0" / >
-<title > Herní doupě</title >
-<link rel="stylesheet" href="css/launcher.css" / >
-</head >
-<body >
-<div class="app-shell" >
-<header class="topbar" >
-<h1 > Herní doupě</h1 >
-<p > Offline webová aplikace pro tablet, mobil i PC</p >
-</header >
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: white;
+}
 
-<main class="game-grid" >
-<a class="game-card" href="games/piskvorky/index.html" >
-<div class="game-card-image piskvorky-bg" > </div >
-<div class="game-card-content" >
-<h2 > Piškvorky</h2 >
-<p > Klasická hra proti hráči nebo programu</p >
-</div >
-</a >
+.app-shell {
+    min-height: 100vh;
+    padding: 24px;
+}
 
-<a class="game-card" href="games/ponor/index.html" >
-<div class="game-card-image ponor-bg" > </div >
-<div class="game-card-content" >
-<h2 > Ponor do hlubin</h2 >
-<p > Ponor, poklady a návrat zpět na loď</p >
-</div >
-</a >
-</main >
-</div >
+.topbar {
+    text-align: center;
+    margin-bottom: 28px;
+}
 
-<script src="js/launcher.js" > </script >
-</body >
-</html >
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.game-card {
+    overflow: hidden;
+    border-radius: 18px;
+    background: #1f2937;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.game-card-image {
+    height: 130px;
+}
+
+.game-card-content {
+    padding: 18px;
+}
+
+.sedma-bg {
+    background: linear-gradient(135deg, #14532d, #052e16);
+}
+
+.piskvorky-bg {
+    background: linear-gradient(135deg, #1d4ed8, #111827);
+}
+
+.ponor-bg {
+    background: linear-gradient(135deg, #0369a1, #082f49);
+}
