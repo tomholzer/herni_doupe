@@ -48,7 +48,7 @@ const elements = {
     toast: document.getElementById("toast")
 };
 
-const DEFAULT_SERVER_URL = "http://192.168.0.133:3000";
+const DEFAULT_SERVER_URL = "https://founder-congratulations-variety-yen.trycloudflare.com";
 
 const appState = {
     socket: null,
