@@ -48,7 +48,7 @@ const elements = {
     toast: document.getElementById("toast")
 };
 
-const DEFAULT_SERVER_URL = "https://choices-powerseller-heath-sign.trycloudflare.com";
+const DEFAULT_SERVER_URL = "https://craps-album-push-tender.trycloudflare.com";
 
 const appState = {
     socket: null,
