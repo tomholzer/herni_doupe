@@ -154,9 +154,20 @@ function createGame() {
         serverName: elements.serverNameInput.value.trim() || "Sedma server"
     }, response => {
         hideSpinner();
-        if (!response?.ok) { showToast("Hru se nepodařilo vytvořit."); return; }
-        joinGame(response.roomCode, elements.passwordInput.value.trim());
-    });
+        if (!response?.ok) {
+            showToast("Hru se nepodařilo vytvořit.");
+            return;
+        }
+
+        appState.currentRoomCode = response.roomCode;
+        appState.currentPlayerId = response.playerId;
+        appState.ready = false;
+
+        localStorage.setItem("sedma.roomCode", response.roomCode);
+        localStorage.setItem("sedma.playerId", response.playerId);
+
+        showToast("Hra vytvořena.");
+            });
 }
 
 function joinGame(roomCode, password = "") {
