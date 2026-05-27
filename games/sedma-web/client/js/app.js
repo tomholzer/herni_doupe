@@ -140,9 +140,12 @@ function ensureSocket() {
 
 function createGame() {
     if (!ensureSocket()) return;
+
     localStorage.setItem("sedma.serverName", elements.serverNameInput.value.trim() || "Sedma server");
     localStorage.setItem("sedma.playerName", elements.playerNameInput.value.trim() || "Hráč");
+
     showSpinner();
+
     appState.socket.emit("createGame", {
         name: elements.gameNameInput.value.trim(),
         password: elements.passwordInput.value.trim(),
@@ -154,6 +157,7 @@ function createGame() {
         serverName: elements.serverNameInput.value.trim() || "Sedma server"
     }, response => {
         hideSpinner();
+
         if (!response?.ok) {
             showToast("Hru se nepodařilo vytvořit.");
             return;
@@ -167,7 +171,19 @@ function createGame() {
         localStorage.setItem("sedma.playerId", response.playerId);
 
         showToast("Hra vytvořena.");
-            });
+
+        appState.socket.emit("rejoinGame", {
+            roomCode: response.roomCode,
+            playerId: response.playerId
+        }, joinResponse => {
+            if (!joinResponse?.ok) {
+                showToast("Nepodařilo se otevřít lobby hry.");
+                return;
+            }
+
+            showScreen("lobby");
+        });
+    });
 }
 
 function joinGame(roomCode, password = "") {
