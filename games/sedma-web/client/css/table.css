@@ -1,41 +1,23 @@
 .game-layout {
     height: calc(100dvh - 98px);
     min-height: 0;
-
     display: grid;
     grid-template-columns: 1fr !important;
-
     gap: 12px;
-
     overflow: hidden;
 }
 
 .game-table {
     position: relative;
-
     width: 100%;
     height: 100%;
-
     min-height: 460px;
-
     border-radius: 26px;
-
     overflow: hidden;
-
     background:
-        radial-gradient(
-            circle at center,
-            rgba(255,255,255,0.06) 0,
-            transparent 33%
-        ),
-        linear-gradient(
-            135deg,
-            var(--table),
-            var(--table-dark)
-        );
-
+        radial-gradient(circle at center, rgba(255,255,255,0.06) 0, transparent 33%),
+        linear-gradient(135deg, var(--table), var(--table-dark));
     border: 9px solid var(--wood);
-
     box-shadow:
         inset 0 0 30px rgba(0,0,0,0.35),
         0 18px 42px rgba(0,0,0,0.35);
@@ -43,44 +25,37 @@
 
 .player-zone {
     position: absolute;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 0;
-
     padding: 6px;
 }
 
 .player-bottom-area {
     position: absolute;
-
     left: 5%;
     right: 5%;
     bottom: 2%;
-
     height: 24%;
-
     display: grid;
-
-    grid-template-columns:
-        minmax(66px, 0.24fr)
-        1fr;
-
+    grid-template-columns: minmax(66px, 0.24fr) 1fr;
     align-items: end;
-
     gap: 12px;
+}
+
+.bottom-main-area {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: end;
+    height: 100%;
 }
 
 .player-bottom {
     position: relative;
-
     inset: auto;
-
     height: 100%;
-
     justify-content: center;
     align-items: end;
 }
@@ -89,7 +64,6 @@
     left: 18%;
     right: 18%;
     top: 2%;
-
     height: 18%;
 }
 
@@ -97,9 +71,7 @@
     top: 24%;
     bottom: 25%;
     left: 1%;
-
     width: 16%;
-
     flex-direction: column;
 }
 
@@ -107,15 +79,12 @@
     top: 24%;
     bottom: 25%;
     right: 1%;
-
     width: 16%;
-
     flex-direction: column;
 }
 
 .table-center {
     position: absolute;
-
     left: 20%;
     right: 20%;
     top: 24%;
@@ -125,25 +94,81 @@
 .played-cards {
     position: absolute;
     inset: 0;
-
     pointer-events: none;
 }
 
 .play-area-label {
     position: absolute;
-
     left: 50%;
     top: 18%;
-
     transform: translateX(-50%);
-
     color: rgba(255,255,255,0.76);
-
     font-weight: 800;
-
     padding: 6px 12px;
-
     background: rgba(0,0,0,0.20);
-
     border-radius: 999px;
+}
+
+.discard-slot {
+    align-self: end;
+    width: var(--my-card-w);
+    height: var(--my-card-h);
+    min-width: 66px;
+    min-height: 92px;
+    border: 3px solid #8eed9b;
+    border-radius: 12px;
+    color: rgba(210,255,218,0.75);
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(142,237,155,0.08);
+}
+
+.deck-button {
+    position: absolute;
+    width: var(--card-w);
+    height: var(--card-h);
+    border: 2px solid rgba(255,255,255,0.42);
+    border-radius: 12px;
+    background: repeating-linear-gradient(
+        45deg,
+        #202833,
+        #202833 8px,
+        #33435b 8px,
+        #33435b 16px
+    );
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.30);
+    z-index: 2;
+}
+
+.deck-pos-left .deck-button {
+    left: 4%;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.deck-pos-center .deck-button {
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.deck-pos-right .deck-button {
+    right: 4%;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.deck-info-badge {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.72);
+    font-size: clamp(22px, 4vmin, 42px);
+    font-weight: 900;
 }
