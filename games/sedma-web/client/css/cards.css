@@ -1,0 +1,313 @@
+.card {
+    position: relative;
+
+    width: var(--card-w);
+    height: var(--card-h);
+
+    min-width: 38px;
+    min-height: 54px;
+
+    max-width: 92px;
+    max-height: 132px;
+
+    margin-left: var(--overlap);
+
+    border-radius: 10px;
+
+    background: #f8f8f8;
+    color: #111;
+
+    border: 1px solid rgba(0,0,0,0.25);
+
+    box-shadow: 0 6px 12px rgba(0,0,0,0.28);
+
+    cursor: pointer;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    padding: 7px;
+
+    user-select: none;
+}
+
+.card:first-child {
+    margin-left: 0;
+}
+
+.player-bottom .card {
+    width: var(--my-card-w);
+    height: var(--my-card-h);
+
+    max-width: 122px;
+    max-height: 170px;
+}
+
+.card.back {
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #26364d,
+            #26364d 8px,
+            #375279 8px,
+            #375279 16px
+        );
+
+    color: transparent;
+
+    cursor: default;
+}
+
+.card.red {
+    color: #b10f2e;
+}
+
+.card-corner {
+    font-weight: 900;
+    line-height: 1;
+
+    font-size: clamp(
+        12px,
+        2.2vmin,
+        22px
+    );
+}
+
+.card-suit {
+    align-self: center;
+    justify-self: center;
+
+    font-size: clamp(
+        20px,
+        4vmin,
+        40px
+    );
+}
+
+/* ========================= */
+/* KARTY NA STOLE            */
+/* ========================= */
+
+.table-card {
+    position: absolute;
+
+    width: var(--card-w);
+    height: var(--card-h);
+
+    max-width: 92px;
+    max-height: 132px;
+
+    margin: 0;
+
+    pointer-events: none;
+}
+
+/* Základní pozice */
+
+.table-card.pos-bottom {
+    left: 50%;
+    bottom: 6%;
+    z-index: 4;
+}
+
+.table-card.pos-top {
+    left: 50%;
+    top: 4%;
+    z-index: 2;
+}
+
+.table-card.pos-left {
+    left: 31%;
+    top: 42%;
+    z-index: 3;
+}
+
+.table-card.pos-right {
+    right: 31%;
+    top: 42%;
+    z-index: 3;
+}
+
+/* ========================= */
+/* STACK BOTTOM              */
+/* ========================= */
+
+.table-card.stack-1.pos-bottom {
+    transform: translateX(-50%);
+}
+
+.table-card.stack-2.pos-bottom {
+    transform: translateX(calc(-50% - 45px));
+}
+
+.table-card.stack-3.pos-bottom {
+    transform: translateX(calc(-50% + 45px));
+}
+
+.table-card.stack-4.pos-bottom {
+    transform: translateX(calc(-50% - 90px));
+}
+
+.table-card.stack-5.pos-bottom {
+    transform: translateX(calc(-50% + 90px));
+}
+
+.table-card.stack-6.pos-bottom {
+    transform: translateX(calc(-50% - 135px));
+}
+
+.table-card.stack-7.pos-bottom {
+    transform: translateX(calc(-50% + 135px));
+}
+
+/* ========================= */
+/* STACK TOP                 */
+/* ========================= */
+
+.table-card.stack-1.pos-top {
+    transform:
+        translateX(-50%)
+        rotate(180deg);
+}
+
+.table-card.stack-2.pos-top {
+    transform:
+        translateX(calc(-50% - 45px))
+        rotate(180deg);
+}
+
+.table-card.stack-3.pos-top {
+    transform:
+        translateX(calc(-50% + 45px))
+        rotate(180deg);
+}
+
+.table-card.stack-4.pos-top {
+    transform:
+        translateX(calc(-50% - 90px))
+        rotate(180deg);
+}
+
+.table-card.stack-5.pos-top {
+    transform:
+        translateX(calc(-50% + 90px))
+        rotate(180deg);
+}
+
+.table-card.stack-6.pos-top {
+    transform:
+        translateX(calc(-50% - 135px))
+        rotate(180deg);
+}
+
+.table-card.stack-7.pos-top {
+    transform:
+        translateX(calc(-50% + 135px))
+        rotate(180deg);
+}
+
+/* ========================= */
+/* STACK LEFT                */
+/* ========================= */
+
+.table-card.stack-1.pos-left {
+    transform:
+        translate(-50%, -50%)
+        rotate(90deg);
+}
+
+.table-card.stack-2.pos-left {
+    transform:
+        translate(-50%, calc(-50% - 40px))
+        rotate(90deg);
+}
+
+.table-card.stack-3.pos-left {
+    transform:
+        translate(-50%, calc(-50% + 40px))
+        rotate(90deg);
+}
+
+.table-card.stack-4.pos-left {
+    transform:
+        translate(-50%, calc(-50% - 80px))
+        rotate(90deg);
+}
+
+.table-card.stack-5.pos-left {
+    transform:
+        translate(-50%, calc(-50% + 80px))
+        rotate(90deg);
+}
+
+.table-card.stack-6.pos-left {
+    transform:
+        translate(-50%, calc(-50% - 120px))
+        rotate(90deg);
+}
+
+.table-card.stack-7.pos-left {
+    transform:
+        translate(-50%, calc(-50% + 120px))
+        rotate(90deg);
+}
+
+/* ========================= */
+/* STACK RIGHT               */
+/* ========================= */
+
+.table-card.stack-1.pos-right {
+    transform:
+        translate(50%, -50%)
+        rotate(-90deg);
+}
+
+.table-card.stack-2.pos-right {
+    transform:
+        translate(50%, calc(-50% - 40px))
+        rotate(-90deg);
+}
+
+.table-card.stack-3.pos-right {
+    transform:
+        translate(50%, calc(-50% + 40px))
+        rotate(-90deg);
+}
+
+.table-card.stack-4.pos-right {
+    transform:
+        translate(50%, calc(-50% - 80px))
+        rotate(-90deg);
+}
+
+.table-card.stack-5.pos-right {
+    transform:
+        translate(50%, calc(-50% + 80px))
+        rotate(-90deg);
+}
+
+.table-card.stack-6.pos-right {
+    transform:
+        translate(50%, calc(-50% - 120px))
+        rotate(-90deg);
+}
+
+.table-card.stack-7.pos-right {
+    transform:
+        translate(50%, calc(-50% + 120px))
+        rotate(-90deg);
+}
+
+/* ========================= */
+/* HRATELNOST               */
+/* ========================= */
+
+.card.playable {
+    outline: none !important;
+}
+
+.card.not-playable {
+    opacity: 1 !important;
+    filter: none !important;
+    cursor: pointer !important;
+}

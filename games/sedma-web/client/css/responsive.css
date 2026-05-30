@@ -1,0 +1,251 @@
+@media (min-width: 1181px) {
+    .game-table {
+        max-width: 1480px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1180px) {
+    .game-layout {
+        grid-template-columns: 220px 1fr;
+    }
+
+    :root {
+        --card-w: clamp(48px, 7.5vmin, 82px);
+        --card-h: clamp(68px, 10.8vmin, 118px);
+
+        --my-card-w: clamp(62px, 9.4vmin, 104px);
+        --my-card-h: clamp(88px, 13.3vmin, 146px);
+    }
+}
+
+@media (orientation: landscape) and (max-height: 680px) {
+    body {
+        overflow: hidden;
+    }
+
+    .app-header {
+        min-height: 48px;
+        padding: 5px 8px;
+    }
+
+    .app-title {
+        display: none;
+    }
+
+    .screen-layout {
+        padding: 6px;
+        overflow-y: auto !important;
+    }
+
+    .game-layout {
+        height: calc(100vh - 60px);
+        grid-template-columns: 1fr;
+    }
+
+    .desktop-side-panel {
+        display: none;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .game-table {
+        border-width: 6px;
+        border-radius: 18px;
+        min-height: 320px;
+    }
+
+    .player-bottom-area {
+        left: 3%;
+        right: 3%;
+        bottom: 1.5%;
+
+        height: 26%;
+
+        grid-template-columns:
+            minmax(48px, 0.18fr)
+            1fr;
+    }
+
+    .player-top {
+        left: 20%;
+        right: 20%;
+        height: 16%;
+    }
+
+    .table-center {
+        left: 18%;
+        right: 18%;
+        top: 22%;
+        bottom: 31%;
+    }
+
+    :root {
+        --card-w: 8.8vmin;
+        --card-h: 12.5vmin;
+
+        --my-card-w: 11vmin;
+        --my-card-h: 15.5vmin;
+
+        --overlap: -3.3vmin;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 820px) {
+    body {
+        overflow: hidden;
+    }
+
+    .app-header {
+        min-height: 48px;
+        padding: 5px 8px;
+    }
+
+    .app-title {
+        display: none;
+    }
+
+    .screen-layout {
+        padding: 6px;
+        overflow-y: auto !important;
+    }
+
+    .game-layout {
+        height: calc(100vh - 60px);
+        grid-template-columns: 1fr;
+    }
+
+    .desktop-side-panel {
+        display: none;
+    }
+
+    .header-actions {
+        display: none;
+    }
+
+    .game-table {
+        border-width: 6px;
+        border-radius: 18px;
+        min-height: 0;
+    }
+
+    .player-bottom-area {
+        left: 2%;
+        right: 2%;
+        bottom: 1.5%;
+
+        height: 25%;
+
+        grid-template-columns:
+            minmax(58px, 0.24fr)
+            1fr;
+
+        gap: 6px;
+    }
+
+    .player-top {
+        left: 10%;
+        right: 10%;
+        top: 2%;
+        height: 14%;
+    }
+
+    .player-left,
+    .player-right {
+        width: 16%;
+        top: 20%;
+        bottom: 30%;
+    }
+
+    .table-center {
+        left: 12%;
+        right: 12%;
+        top: 20%;
+        bottom: 32%;
+    }
+
+    .deck-pos-left .deck-button {
+        left: 3%;
+    }
+
+    .deck-pos-right .deck-button {
+        right: 3%;
+    }
+
+    .discard-slot {
+        font-size: 11px;
+        border-width: 2px;
+    }
+
+    :root {
+        --card-w: 12vmin;
+        --card-h: 17vmin;
+
+        --my-card-w: 17vmin;
+        --my-card-h: 24vmin;
+
+        --overlap: -7vmin;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+    .bottom-main-area {
+        grid-template-columns: 1fr auto auto;
+        gap: 6px;
+    }
+
+    .pass-button {
+        min-width: 58px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .fire-button {
+        min-width: 58px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .play-prompt {
+        max-width: 82vw;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .result-overlay {
+        min-width: min(330px, 86vw);
+        padding: 14px 16px;
+    }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+    .bottom-main-area {
+        gap: 6px;
+    }
+
+    .pass-button {
+        min-width: 62px;
+        height: 40px;
+    }
+
+    .fire-button {
+        min-width: 62px;
+        height: 40px;
+    }
+
+    .play-prompt {
+        bottom: calc(100% + 2px);
+    }
+
+    .result-overlay {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .lobby-actions {
+        grid-template-columns: 1fr;
+    }
+}

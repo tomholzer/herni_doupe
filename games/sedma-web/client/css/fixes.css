@@ -1,0 +1,184 @@
+/* PASS */
+
+.pass-button {
+    align-self: end;
+
+    min-width: clamp(64px, 9vw, 96px);
+    height: clamp(42px, 6vw, 58px);
+
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 14px;
+
+    background: rgba(10,10,10,0.72);
+
+    color: white;
+
+    font-size: clamp(15px, 2.6vmin, 22px);
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+.pass-button.hidden {
+    display: none;
+}
+
+.pass-button:hover {
+    background: rgba(35,35,35,0.9);
+}
+
+.play-prompt {
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 6px);
+
+    transform: translateX(-50%);
+
+    color: rgba(255,255,255,0.88);
+
+    background: rgba(0,0,0,0.46);
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    border-radius: 999px;
+
+    padding: 5px 10px;
+
+    font-size: clamp(11px, 1.8vmin, 14px);
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+/* WON PILE */
+
+.discard-slot {
+    cursor: default;
+}
+
+.discard-slot.won-pile {
+    border-color: rgba(255,255,255,0.22);
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.discard-slot.empty {
+    cursor: default;
+}
+
+.discard-slot .small-card {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.won-pile-count {
+    display: none !important;
+}
+
+.won-pile-points {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: rgba(0,0,0,0.74);
+
+    color: white;
+
+    font-size: clamp(28px, 5vmin, 54px);
+    font-weight: 950;
+}
+
+/* SCROLL FIX */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.screen-layout {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#menuScreen.active,
+#lobbyScreen.active {
+    min-height: max-content;
+    overflow: visible;
+}
+
+.desktop-side-panel {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+}
+
+/* SPINNER */
+
+.server-spinner {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    border: 6px solid rgba(255,255,255,0.25);
+    border-top-color: white;
+
+    animation: spin 0.8s linear infinite;
+
+    z-index: 10;
+}
+
+@keyframes spin {
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    max-width: min(92vw, 760px);
+
+    padding: 14px 18px;
+
+    border-radius: 14px;
+
+    background: rgba(0,0,0,0.88);
+
+    color: white;
+
+    z-index: 99;
+}

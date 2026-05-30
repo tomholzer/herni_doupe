@@ -1,0 +1,41 @@
+.games-list,
+.players-list {
+    display: grid;
+    gap: 10px;
+}
+
+.lobby-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.game-row,
+.player-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+
+    padding: 12px;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.055);
+}
+
+.game-row small,
+.player-row small {
+    color: var(--muted);
+}
+
+.join-button {
+    border: 0;
+    border-radius: 10px;
+    padding: 9px 12px;
+
+    background: #f2cc60;
+
+    cursor: pointer;
+    font-weight: 800;
+}

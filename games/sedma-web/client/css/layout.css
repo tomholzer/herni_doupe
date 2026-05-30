@@ -1,0 +1,104 @@
+.app-shell {
+    height: 100dvh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-header {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    background: rgba(12, 16, 22, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.app-title {
+    flex: 1;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 32px);
+}
+
+.app-header p {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.active-player-name {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-button {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 11px;
+    background: var(--panel-2);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.screen-layout {
+    flex: 1;
+    min-height: 0;
+    padding: 14px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+#menuScreen.active,
+#lobbyScreen.active {
+    min-height: max-content;
+    overflow: visible;
+    padding-bottom: 80px;
+}
+
+#gameScreen.active {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.panel {
+    background: rgba(23,29,37,0.96);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.28);
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+.wide-panel {
+    grid-column: 1 / -1;
+}
