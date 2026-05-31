@@ -249,3 +249,108 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* MOBILE GAME TABLE FIT */
+
+@media (max-width: 768px) {
+    .app-header {
+        min-height: 48px;
+        height: 48px;
+        padding: 4px 8px;
+    }
+
+    .screen-layout {
+        padding: 4px;
+        height: calc(100dvh - 48px);
+        overflow: hidden !important;
+    }
+
+    .game-layout {
+        height: calc(100dvh - 56px);
+        overflow: hidden;
+    }
+
+    .game-table {
+        height: 100%;
+        min-height: 0;
+        border-width: 5px;
+        border-radius: 18px;
+    }
+
+    :root {
+        --card-w: 52px;
+        --card-h: 76px;
+        --my-card-w: 58px;
+        --my-card-h: 86px;
+        --overlap: -20px;
+    }
+
+    .player-top {
+        top: 1%;
+        height: 13%;
+    }
+
+    .table-center {
+        top: 16%;
+        bottom: 27%;
+        left: 10%;
+        right: 10%;
+    }
+
+    .play-area-label {
+        top: 36%;
+        font-size: 13px;
+        padding: 4px 9px;
+    }
+
+    .deck-button {
+        transform: translate(-50%, -50%) scale(0.78);
+    }
+
+    .deck-pos-center .deck-button {
+        left: 50%;
+        top: 18%;
+    }
+
+    .player-bottom-area {
+        left: 2%;
+        right: 2%;
+        bottom: 1%;
+        height: 19%;
+        grid-template-columns: 56px 1fr;
+        gap: 6px;
+    }
+
+    .bottom-main-area {
+        grid-template-columns: 1fr auto auto;
+        gap: 4px;
+    }
+
+    .discard-slot {
+        min-width: 48px;
+        min-height: 68px;
+        font-size: 11px;
+        border-width: 2px;
+    }
+
+    .pass-button,
+    .fire-button {
+        min-width: 48px;
+        height: 36px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+
+    .card {
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .card-corner {
+        font-size: 13px;
+    }
+
+    .card-suit {
+        font-size: 24px;
+    }
+}
