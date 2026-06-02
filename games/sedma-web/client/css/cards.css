@@ -311,3 +311,70 @@
     filter: none !important;
     cursor: pointer !important;
 }
+
+
+/* FIX: viditelné rozložení více karet jednoho hráče na stole */
+
+.table-card.pos-bottom.stack-1 {
+    transform: translateX(-50%);
+}
+
+.table-card.pos-bottom.stack-2 {
+    transform: translateX(calc(-50% - 48px));
+}
+
+.table-card.pos-bottom.stack-3 {
+    transform: translateX(calc(-50% + 48px));
+}
+
+.table-card.pos-bottom.stack-4 {
+    transform: translateX(calc(-50% - 96px));
+}
+
+.table-card.pos-top.stack-1 {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.table-card.pos-top.stack-2 {
+    transform: translateX(calc(-50% - 48px)) rotate(180deg);
+}
+
+.table-card.pos-top.stack-3 {
+    transform: translateX(calc(-50% + 48px)) rotate(180deg);
+}
+
+.table-card.pos-top.stack-4 {
+    transform: translateX(calc(-50% - 96px)) rotate(180deg);
+}
+
+.table-card.pos-left.stack-1 {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.table-card.pos-left.stack-2 {
+    transform: translate(-50%, calc(-50% - 42px)) rotate(90deg);
+}
+
+.table-card.pos-left.stack-3 {
+    transform: translate(-50%, calc(-50% + 42px)) rotate(90deg);
+}
+
+.table-card.pos-left.stack-4 {
+    transform: translate(-50%, calc(-50% - 84px)) rotate(90deg);
+}
+
+.table-card.pos-right.stack-1 {
+    transform: translate(50%, -50%) rotate(-90deg);
+}
+
+.table-card.pos-right.stack-2 {
+    transform: translate(50%, calc(-50% - 42px)) rotate(-90deg);
+}
+
+.table-card.pos-right.stack-3 {
+    transform: translate(50%, calc(-50% + 42px)) rotate(-90deg);
+}
+
+.table-card.pos-right.stack-4 {
+    transform: translate(50%, calc(-50% - 84px)) rotate(-90deg);
+}

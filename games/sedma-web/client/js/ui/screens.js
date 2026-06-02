@@ -38,3 +38,14 @@ window.toggleSidePanel = function toggleSidePanel() {
 
     openSidePanel();
 };
+
+window.updateActivePlayerName = function updateActivePlayerName(name) {
+    if (!elements.activePlayerName) {
+        return;
+    }
+
+    elements.activePlayerName.textContent =
+        name
+            ? `Hraješ jako: ${name}`
+            : "Nepřihlášen";
+};
