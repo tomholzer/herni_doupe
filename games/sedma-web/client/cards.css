@@ -1,0 +1,214 @@
+.card {
+    position: relative;
+
+    width: var(--card-w);
+    height: var(--card-h);
+
+    min-width: 38px;
+    min-height: 54px;
+
+    max-width: 92px;
+    max-height: 132px;
+
+    margin-left: var(--overlap);
+
+    border-radius: 10px;
+
+    background: #f8f8f8;
+    color: #111;
+
+    border: 1px solid rgba(0,0,0,0.25);
+
+    box-shadow: 0 6px 12px rgba(0,0,0,0.28);
+
+    cursor: pointer;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    padding: 7px;
+
+    user-select: none;
+}
+
+.card:first-child {
+    margin-left: 0;
+}
+
+.player-bottom .card {
+    width: var(--my-card-w);
+    height: var(--my-card-h);
+
+    max-width: 122px;
+    max-height: 170px;
+}
+
+.card.back {
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #26364d,
+            #26364d 8px,
+            #375279 8px,
+            #375279 16px
+        );
+
+    color: transparent;
+
+    cursor: default;
+}
+
+.card.red {
+    color: #b10f2e;
+}
+
+.card-corner {
+    font-weight: 900;
+    line-height: 1;
+
+    font-size: clamp(
+        12px,
+        2.2vmin,
+        22px
+    );
+}
+
+.card-suit {
+    align-self: center;
+    justify-self: center;
+
+    font-size: clamp(
+        20px,
+        4vmin,
+        40px
+    );
+}
+
+/* ========================= */
+/* KARTY NA STOLE            */
+/* ========================= */
+
+.table-card {
+    position: absolute;
+
+    width: var(--card-w);
+    height: var(--card-h);
+
+    max-width: 92px;
+    max-height: 132px;
+
+    margin: 0;
+
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Základní pozice */
+
+.table-card.pos-bottom {
+    left: 50%;
+    bottom: 6%;
+    z-index: 4;
+}
+
+.table-card.pos-top {
+    left: 50%;
+    top: 4%;
+    z-index: 2;
+}
+
+.table-card.pos-left {
+    left: 31%;
+    top: 42%;
+    z-index: 3;
+}
+
+.table-card.pos-right {
+    right: 31%;
+    top: 42%;
+    z-index: 3;
+}
+
+/* ========================= */
+/* STACK TABLE CARDS         */
+/* ========================= */
+
+.table-card.pos-bottom.stack-1,
+.table-card.pos-top.stack-1 {
+    transform: translateX(-50%);
+}
+
+.table-card.pos-bottom.stack-2,
+.table-card.pos-top.stack-2 {
+    transform: translateX(calc(-50% + 48px));
+}
+
+.table-card.pos-bottom.stack-3,
+.table-card.pos-top.stack-3 {
+    transform: translateX(calc(-50% + 96px));
+}
+
+.table-card.pos-bottom.stack-4,
+.table-card.pos-top.stack-4 {
+    transform: translateX(calc(-50% + 144px));
+}
+
+.table-card.pos-bottom.stack-5,
+.table-card.pos-top.stack-5 {
+    transform: translateX(calc(-50% + 192px));
+}
+
+.table-card.pos-bottom.stack-6,
+.table-card.pos-top.stack-6 {
+    transform: translateX(calc(-50% + 240px));
+}
+
+.table-card.pos-bottom.stack-7,
+.table-card.pos-top.stack-7 {
+    transform: translateX(calc(-50% + 288px));
+}
+
+.table-card.pos-left.stack-1,
+.table-card.pos-right.stack-1 {
+    transform: translate(-50%, -50%);
+}
+
+.table-card.pos-left.stack-2,
+.table-card.pos-right.stack-2 {
+    transform: translate(calc(-50% + 48px), -50%);
+}
+
+.table-card.pos-left.stack-3,
+.table-card.pos-right.stack-3 {
+    transform: translate(calc(-50% + 96px), -50%);
+}
+
+.table-card.pos-left.stack-4,
+.table-card.pos-right.stack-4 {
+    transform: translate(calc(-50% + 144px), -50%);
+}
+
+.table-card.pos-left.stack-5,
+.table-card.pos-right.stack-5 {
+    transform: translate(calc(-50% + 192px), -50%);
+}
+
+.table-card.pos-left.stack-6,
+.table-card.pos-right.stack-6 {
+    transform: translate(calc(-50% + 240px), -50%);
+}
+
+.table-card.pos-left.stack-7,
+.table-card.pos-right.stack-7 {
+    transform: translate(calc(-50% + 288px), -50%);
+}
+
+.play-area-label {
+    left: 50% !important;
+    top: auto !important;
+    bottom: 115px !important;
+    transform: translateX(-50%) !important;
+    z-index: 30 !important;
+    white-space: nowrap;
+    bottom: 95px !important;
+}
