@@ -116,7 +116,11 @@ function renderPlayedCards(state) {
         positionCounts[pos] += 1;
 
         const cardElement =
-            createCardElement(card, null);
+            createCardElement(card, () => {
+                showToast(
+                    `V balíku zbývá ${Number(state.deckCount || 0)} karet.`
+                );
+            });
 
         cardElement.classList.add(
             "table-card",

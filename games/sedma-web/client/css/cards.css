@@ -99,7 +99,8 @@
 
     margin: 0;
 
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* Základní pozice */
@@ -200,4 +201,13 @@
 .table-card.pos-left.stack-7,
 .table-card.pos-right.stack-7 {
     transform: translate(calc(-50% + 288px), -50%);
+}
+
+.play-area-label {
+    left: 50% !important;
+    top: auto !important;
+    bottom: 155px !important;
+    transform: translateX(-50%) !important;
+    z-index: 30 !important;
+    white-space: nowrap;
 }
