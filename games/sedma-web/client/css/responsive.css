@@ -353,4 +353,13 @@
     .card-suit {
         font-size: 24px;
     }
+
+    .play-area-label {
+    left: 50% !important;
+    top: auto !important;
+    bottom: 105px !important;
+    transform: translateX(-50%) !important;
+    z-index: 30 !important;
+    white-space: nowrap;
+}
 }

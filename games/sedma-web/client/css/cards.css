@@ -206,8 +206,9 @@
 .play-area-label {
     left: 50% !important;
     top: auto !important;
-    bottom: 155px !important;
+    bottom: 115px !important;
     transform: translateX(-50%) !important;
     z-index: 30 !important;
     white-space: nowrap;
+    bottom: 95px !important;
 }
