@@ -297,12 +297,6 @@
         right: 10%;
     }
 
-    .play-area-label {
-        top: 36%;
-        font-size: 13px;
-        padding: 4px 9px;
-    }
-
     .deck-button {
         transform: translate(-50%, -50%) scale(0.78);
     }
@@ -355,11 +349,17 @@
     }
 
     .play-area-label {
-    left: 50% !important;
-    top: auto !important;
-    bottom: 105px !important;
-    transform: translateX(-50%) !important;
-    z-index: 30 !important;
-    white-space: nowrap;
-}
+        left: 50%;
+        top: auto;
+        bottom: 80dpx;
+
+        transform: translateX(-50%);
+
+        z-index: 30;
+
+        white-space: nowrap;
+
+        font-size: 13px;
+        padding: 4px 9px;
+    }
 }
