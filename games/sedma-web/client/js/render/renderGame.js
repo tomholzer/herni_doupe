@@ -21,6 +21,7 @@ function renderGame(state) {
     renderPlayers(state);
     renderPlayedCards(state);
     renderDiscardSlot(state);
+    renderOpponentDiscardSlot(state);
     renderActionButtons(state);
     renderResultOverlay(state);
 }
@@ -220,18 +221,62 @@ function renderSidePanel(state) {
 
     elements.sidePlayersInfo.innerHTML =
         state.players
-            .map(player => `
-                <div class="side-player">
-                    <span class="seat-badge">${player.seat || "?"}</span>
-                    <span>
-                        ${escapeHtml(player.name)}
-                        ${player.isMe ? " (vy)" : ""}
-                        ${player.isBot ? " 🤖" : ""}
-                        <br>
-                        <small>${player.team ? "tým " + player.team : "solo"}</small>
-                    </span>
-                    <strong>${player.handCount}</strong>
-                </div>
-            `)
+            .map(player => {
+                const scoreKey =
+                    player.team
+                        ? `team-${player.team}`
+                        : `seat-${player.seat}`;
+
+                const matchPoints =
+                    state.matchPoints?.[scoreKey] ?? 0;
+
+                return `
+                    <div class="side-player">
+                        <span class="seat-badge">${player.seat || "?"}</span>
+                        <span>
+                            ${escapeHtml(player.name)}
+                            ${player.isMe ? " (vy)" : ""}
+                            ${player.isBot ? " 🤖" : ""}
+                            <br>
+                            <small>${player.team ? "tým " + player.team : "solo"}</small>
+                        </span>
+                        <strong>${matchPoints}/${state.targetMatchPoints || 10}</strong>
+                    </div>
+                `;
+            })
             .join("");
+}
+
+function renderOpponentDiscardSlot(state) {
+    const opponent =
+        state.players.find(player => !player.isMe);
+
+    if (!elements.opponentDiscardSlot || !opponent) {
+        return;
+    }
+
+    const count =
+        Number(opponent.wonCardsCount || 0);
+
+    const points =
+        Number(opponent.points || 0);
+
+    elements.opponentDiscardSlot.onclick = null;
+
+    if (count <= 0) {
+        elements.opponentDiscardSlot.classList.add("hidden");
+        elements.opponentDiscardSlot.innerHTML = "";
+        return;
+    }
+
+    elements.opponentDiscardSlot.classList.remove("hidden");
+
+    elements.opponentDiscardSlot.innerHTML =
+        `<div class="card back small-card"></div>`;
+
+    elements.opponentDiscardSlot.onclick = () => {
+        showToast(
+            `${opponent.name} má ${points} bodů v odkladu.`
+        );
+    };
 }
