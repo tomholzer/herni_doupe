@@ -102,13 +102,16 @@
 .play-area-label {
     position: absolute;
     left: 50%;
-    top: 75%;
+    top: auto;
+    bottom: 6%;
     transform: translateX(-50%);
     color: rgba(255,255,255,0.76);
     font-weight: 800;
     padding: 6px 12px;
     background: rgba(0,0,0,0.20);
     border-radius: 999px;
+    z-index: 25;
+    white-space: nowrap;
 }
 
 .discard-slot {
@@ -175,3 +178,20 @@
     font-weight: 900;
 }
 
+.opponent-discard-slot {
+    position: absolute;
+    right: 5%;
+    top: 4%;
+
+    width: var(--card-w);
+    height: var(--card-h);
+
+    min-width: 52px;
+    min-height: 76px;
+
+    z-index: 20;
+}
+
+.opponent-discard-slot.hidden {
+    display: none !important;
+}
