@@ -133,6 +133,11 @@
 
                     <div id="gameTable" class="game-table deck-pos-center">
                         <div class="player-zone player-top" id="playerTop"></div>
+                            <button
+                                id="opponentDiscardSlot"
+                                class="discard-slot opponent-discard-slot"
+                                type="button">
+                            </button>
                         <div class="player-zone player-left" id="playerLeft"></div>
                         <div class="player-zone player-right" id="playerRight"></div>
 
@@ -146,12 +151,14 @@
                         </div>
 
                         <div class="player-bottom-area">
-                            <button id="discardSlot" class="discard-slot" type="button">Odklad</button>
+                            <button id="passButton" class="pass-button hidden" type="button">PASS</button>
+
                             <div class="bottom-main-area">
                                 <div class="player-zone player-bottom" id="playerBottom"></div>
                                 <button id="fireButton" class="fire-button hidden" type="button">FIRE</button>
-                                <button id="passButton" class="pass-button hidden" type="button">PASS</button>
                             </div>
+
+                            <button id="discardSlot" class="discard-slot" type="button">Odklad</button>
                         </div>
                     </div>
                 </div>
